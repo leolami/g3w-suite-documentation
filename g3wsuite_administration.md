@@ -158,11 +158,13 @@ The icons at the head of each row, allow you to:
  
 ### Add Group Users
 Through this form it is possible to create new user groups and define their role.
+Through this form it is possible to create new user groups and define their role.
 
 It is possible to create only two types of user groups:
  * **`Editor`:** in which only Editor2 users can be inserted
  * **`Viewer`:** in which only Viewer users can be inserted
 
+The association between user and user groups can also be achieved at the individual user management level.
 The association between user and user groups can also be achieved at the individual user management level.
 
 In the specific form for creating user groups, the following info are defined:
@@ -228,8 +230,6 @@ If you select the **Use MacroGroup title and logo for the client** options, the 
 After compiling the form, click on the **Save button** to confirm your choices.
 
 ![](images/manual/buttom_save.png)
-
-
 
 
 ### MacroGroups list
