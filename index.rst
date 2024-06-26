@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 =======================================================
-3W-SUITE 3.8
+G3W-SUITE 3.8
 Deployment and administration manual
 =======================================================
 
