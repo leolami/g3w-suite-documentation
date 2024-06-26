@@ -18,7 +18,7 @@ Through the tutorials it will be possible to:
 
 # Download demo data
 
-The tutorial is based on predefined data and QGIS 3.28.x LTR project **downloadable from <a href="https://drive.google.com/file/d/1K7IUUMtqZvftSXz3aCJR5Me5CMamChqk/view" target="_blank">this link</a>**.
+The tutorial is based on predefined data and QGIS 3.34.x LTR project **downloadable from <a href="https://drive.google.com/file/d/1tYQHa4Oe7xrZy0uDrEAyGOUimxdifNlr/view?usp=sharing" target="_blank">this link</a>**.
 
 The .zip file contains the **`G3W-SUITE`** directory with three sub directories:
 * **`projects`:** containing a QGIS project (**`buildings_management.qgs`**) already optimized for the tutorial
@@ -37,7 +37,7 @@ Inside the **`build_management_demo.sqlite` SpatiaLite DB** there are the follow
 
 **IMPORTANT: a copy of this data are present on the server, you can not change your local data copy**
 
-The project (**based on QGIS LTR 3.22.x**) foresees:
+The project (**based on QGIS LTR 3.34.x**) foresees:
 * a **dressing categorized by the `buildings` layer** based on the categorical field **`type`**
 * the presence of a **1: n relationship** between the **`buildings`** layer and the alphanumeric **`maintenance_works`** and **`buildings_rating`** tables
 * pre-developed **query forms** for the **`buildings`** layer and the **`maintenance_works`** table

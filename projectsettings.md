@@ -43,8 +43,8 @@ The option **`Automatically create transaction group where possible`** is automa
 #### Layers Capabilities
 
 **This submenu defines the **querable and/or searchable layers** at the WebGis service level.**
- * Check the **`Identifiable`** column if you want that the layer will be searchable on the WebGis
- * Check the **`Searchable`** column if you want that the layer will be querable on the WebGis
+ * Check the **`Identifiable`** column if you want that the layer will be searchable on the WMS service
+ * Check the **`Searchable`** column if you want that the layer will be querable on the WMS service
  
 
 **NB: this differentiation is only possible by using the QGIS APIs such as Search URL endpoint.**
