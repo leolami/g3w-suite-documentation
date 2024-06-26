@@ -22,14 +22,16 @@ The color of the interface depends on the type of user logged in.
 
 The **`Tools panel`** is located on the left and containing the following objects:
  * **Metadata:** any content defined in the GetCapabilities of the QGIS Project
- * **Print:** printing tool based on the layouts defined on the QGIS project
- * **Search:** with the search tools defined in the Administration session, as well as a free **Query Builder** like the one present in QGIS
- * **Charts:** visualization of any graphs created on QGIS with the DataPlotly plugin
+  * **Charts:** visualization of the plots created on QGIS with the DataPlotly plugin
  * **Spatial Bookmarks:** tool for using the Spatial Bookmarks associated with the QGIS project and allowing the user to create new ones for his exclusive use.
- * **Tools:** session that collects the various tools that may be activated on the WebGis service (including editing tools)
- * **WMS:** session to add custom WMS services to the map
- * **Map:** containing:
-   * **Layers:** structured list of layers, defined on the QGIS project
+ * **Print:** printing tool based on the layouts defined on the QGIS project
+
+ * **Search:** with the search tools defined in the Administration session, as well as a free **Query Builder** like the one present in QGIS
+ * **Editing layers:** open editing session
+ * **Add WMS:** session to add custom WMS services to the map
+
+The lower section containing:
+   * **Data:** structured list of layers, defined on the QGIS project
    * **Base:** choice of the base map from those defined at the creation level of the Thematic Group
    * **Legend:** graphic legend of the various layers
 
@@ -65,7 +67,7 @@ At the base of the map area there is an information bar showing:
  * ![ ](images/manual/icon_navigation_querylayer.png) **`query`:** puntual query of geographical layers
  * ![ ](images/manual/icon_navigation_querybox.png) **`querybbox`:** query via bounding box - **N.B.** for the layers to be queried according to this method it is necessary that they are published as WFS services on the QGIS project
   * ![ ](images/manual/icon_navigation_querypoligon.png) **`querybypolygon`:** it will be possible to automatically query the features of one or more layers that fall within a polygonal element of a guide layer. (Eg what's inside a cadastral parcel?). - **N.B.** the questionable layers must be published as WFS services on the QGIS project
-   * ![ ](images/manual/querybydraw.png) **`querybydraw`:**: query based on an irregularly shaped polygon drawn by the user - N.B. for the layers to be queried according to this method it is necessary that they are published as WFS services on the QGIS project 
+   * ![ ](images/manual/icon_navigation_querybydrawpoligon.png) **`querybydraw`:**: query based on an irregularly shaped polygon drawn by the user - N.B. for the layers to be queried according to this method it is necessary that they are published as WFS services on the QGIS project 
  * ![ ](images/manual/icon_navigation_geolocation.png) **`geolocation`:** geolocation tool (useful for consultation from tablet)
  * ![ ](images/manual/icon_navigation_nominatim.png) **`geocoding`:** search tools for addresses and toponyms based on OSM or Bing, based on the providers activated at the administration level
  * ![ ](images/manual/icon_navigation_streetview.png) **`streetview`:** Google StreetView on your map
@@ -194,6 +196,17 @@ This content is divided into three sessions: **General, Space Info and Layers.**
 
 ![](images/manual/g3wclient_metadata_view.png)
 
+
+### Spatial Bookmarks
+This tool will display the spatial bookmarks defined and associated with the QGIS project.
+
+The user, even if not logged in, will be able to create new bookmarks by simply positioning them in an area of ​​the map and then clicking on the **`+`** button to define the **`Name`** to associate with the bookmark.
+
+These bookmarks will be saved in the browser cache and therefore always available until deleted.
+
+![](images/manual/patial_bookmarks.png)
+
+
 ### Charts
 **View graphs created using QGIS [DataPlotly](https://github.com/ghtmtt/DataPlotly) and activated at the admin session level.**
 
@@ -227,10 +240,10 @@ If the **chart is linked to a child layer in a 1:N relation**, it can also be di
 
 The tool allows you to choose:
  * **Template:** print layout among those associated with the published QGIS project
- * **Scale:** print scale
- * **DPI:** print resolution
+ * **Scale:** print scale, with delfault values ​​list, but also manually customizable
+ * **DPI:** print resolution, with delfault values ​​list, but also manually customizable
  * **Rotation:** rotation angle
- * **Format:** print to PDF or JPEG
+ * **Format:** print to PNG, JPG, SVG, PDF or GeoPDF
  * **Custom title:** using the **ItemIDs** at the print layout level of the QGIS project it is possible to insert one or more labels with **customized content in the print** from WebGis
 
 On the map, a light rectangular area will allow you to define the print area.
@@ -244,7 +257,7 @@ The cards to be printed are defined by referring to the atlas identifier defined
 
 
 
-### WMS
+### Add WMS
 **Through this tool the user can add custom WMS layers to the WebGis service.**
 
 The user can add one or more WMS service by defining: 
@@ -275,7 +288,7 @@ The list of WMS services and the specific WMS layers added will remain available
 
 ### Search and Query Builder
 
-A classic Query Builder is present at the Search menu level.
+A classic ![](images/manual/query_builder_icon.png) **Query Builder** is present at the Search menu level.
 Through this tool it is possible to:
  * carry out alphanumeric searches on geometric layers
  * save the query to reuse it until the end of the work session
@@ -292,7 +305,11 @@ The saved query will be available until the browser cache is cleared
 ![](images/manual/g3wclient_searc_list.png)
 
 
-You choose the search you are interested in, fill in the required fields and click on the **`Search` button**.
+You choose the search you are interested in, fill in the required fields and click on the **`Search`** button.
+
+![](images/manual/g3wclient_search_example.png)
+
+Additional information is displayed if you log in as Administrator
 
 The **panel with the list of results** will open on the right side of the client, for each result the first three fields of the associated table will be displayed.
 
@@ -305,11 +322,27 @@ Zoom to features and download icons are available for results (single or cumulat
 ### Map
 
 This session has three tabs:
- * **Layers:** structured list of layers, defined on the QGIS project
+ * **Data:** structured list of layers, defined on the QGIS project
  * **Base:** choice of the base map from those defined at the Cartographic Group creation level
  * **Legend:** graphic legend
  
-#### Layers
+
+#### Choose Themes
+In the event that Themes (Views) are defined in the QGIS project, a specific choice menu will be available in the Layers session of the TOC.
+
+The choice of a Theme will determine the automatic activation of the layers and related styles, defined in the Theme itself.
+
+### User themes
+The logged in user can create customized themes in the same way as he prepares them in QGIS, i.e. by defining the on/off layers and associating any specific styles with the individual layers.
+
+By clicking on the + button it will be possible to define a name to associate and create the Theme.
+
+The created themes will always be available to the user who defined them.
+Once created, the User Themes will be selectable, overwritable and editable using the icons shown next to each of them.
+
+![](images/manual/g3wclient_theme.png)
+
+#### Data
 
 This tab shows the layers prepared on QGIS projects with the same organization the groups and subgroups.
 
@@ -323,15 +356,15 @@ In the list of layers, right click on the name of the single layer shows the fol
  * **Name and kind of geometry** of the layer
   * **Metadata:** descriptive information inherited from what has been defined, at QGIS project level, in the 'Abstract' form of the 'QGIS Server' session of the 'Layer Properties'
  * **Styles:** to choose the style to be applied to the layer, in the case of multi-style layers
- * **Abstract:**  a text (also html) defined in the **Layer Properties**, **Metadata** session, **Identification** tab, **Abstract** form.
  * **Zoom to layer:** to zoom in on the extension of the layer
  * **Open attribute table:** to consult the associated attribute table
- * **Download shapefile:** to download the layer as a shapefile; function activatable from the administration panel
+ * **Download Shapefile:** to download the layer as a shapefile; function activatable from the administration panel
  * **Download GEOTIFF:** to download a raster in GeoTiff format, full layer or clipped to the extent of the canvas; function activatable from the administration panel  
  * **Download GeoPackage:** to download the layer as a GeoPackage; function activatable from the administration panel
  * **Download CSV:** to download the layer as a CSV; function activatable from the administration panel
  * **Download XLS:** to download the layer as a XLS; function activatable from the administration panel
- * **WMS/WFS URL:** URL of the WMS/WFS service relative to the project or URL of the external WMS
+ * **Filters:** management, based on the logged in user, of the filters associated with the layer
+ * **WMS/WFS/WFS3/WCS URL:** URL of the WMS/WFS service relative to the project or URL of the external WMS
 
 ![](images/manual/g3wclient_layer_function.png)
 
@@ -347,7 +380,10 @@ The attribute table (resizable) is equipped with **paging function, highlight fu
 
 In the case of links to **multimedia content**, the previews of the images and/or the **Open** button will be displayed for consultation of different types of content.
 
-The window is resizable.
+To the left of each record in the table there are two/three tools:
+ *  checkbox to select the records/feature
+ * the 'Form view' icon to open the feature attributes form
+ * in the case of a layer editable by the user, the attributes table will show, for each record, an editing icon to allow direct modification of the feature
 
 ![](images/manual/g3wclient_table_view.png)
 
@@ -355,7 +391,7 @@ A **generic filter**, positioned at the top right, is applied generically to the
 
 **Filters based on the contents of the individual fields** are available at the top of each column.
 
-The **Show features visible on the map** icon ![](images/manual/g3wclient_mapfilter_table.png) allows you to filter the records of the table according to the features visible in the map.
+The **Update results when map moves** icon ![](images/manual/g3wclient_mapfilter_table.png), located in the bottom left corner, allows you to filter the records of the table according to the features visible in the map.
 
 It is possible to **select the features of the individual layers and apply filters** that will affect:
  * on the map content
@@ -371,12 +407,11 @@ The selection of features can be made:
  * on the results of a query (add / remove from current selection)
 
 At the same time, additional icons appear:
- * on the layer attribute table
+ * on the layer attribute table, in the bottom left corner
  * to the right of the layer on the TOC
  * at the level of the relevant plots
 
-Aggiungi immagine: g3wclient_selection.png
-The icons in the attribute table allow you to:
+The icons, palced in the left buttom corner of the attribute, table allow you to:
  * ![](images/manual/g3wclient_selection_table_clear.png) Clear selection
  * ![](images/manual/g3wclient_selection_table_invert.png) Invert selection
  * ![](images/manual/g3wclient_selection_table_filter.png) Add/Remove filter
@@ -392,7 +427,10 @@ Activation of the filter is reflected:
  * on the map content
  * on the attribute table content
  * on the data displayed by plots
- * on the print contents (only with QGIS 3.18)
+ * on the print contents
+
+ ![](images/manual/g3wclient_table_select.png)
+
 
 ##### Filter users based
 **On the client you can select (highlight) and filter a subset of vector layer geometries.**
