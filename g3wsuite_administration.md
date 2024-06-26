@@ -464,6 +464,15 @@ A large **+ icon** is available to access the form for creating a new group.
 
 ![](images/manual/g3wsuite_administration_group_list.png)
 
+A simple filter allows you to view only some cartographic groups based on:
+ * the MacroGroup to which they belong
+ * the associated EPSG
+ * the different types of users (Editor, Editor and Viewer) associated with them
+
+The options of this last filter vary based on the type of logged in user.
+
+![](images/manual/group_filter.png)
+
 #### Cartographic Group Trash
 
 The operation of deleting a Cartographic Group is not definitive.
@@ -560,6 +569,7 @@ Otherwise the initial extension will correspond to the maximum one defined on th
  * **`Automatic zoom to query result features`**: if in the results of a search there are only features of a layer, the webgis automatic zoom on their extension
  
 The next options allow you to define the type of WMS / WFS query to be carried out and the maximum number of results obtainable following a query.
+ * **`WMS GeMap image format`***: definition of the image format associated to WMS service in the map
  * **`Max feature to get for query`***: max number of feature to get for single or multiple mode
  * **`Query control mode`***: single or multiple
  * **`Query by bbox control mode`***: single or multiple
@@ -702,14 +712,17 @@ Next to each layer are a series of icons and checkboxes:
    * ![](images/manual/icon_hide_columns.png) **Hide columns by User/Groups:** create or manage constraints on one or more fields of a layer based on single or group user/s
    * ![](images/manual/icon_widget.png) **Widgets list:** shows how many widgets (eg searches) are associated with this layer and allows you to activate new ones
    * ![](images/manual/icon_styles.png) **Manage layer styles:** manage multi-style layer
- * **Download:** allows the download of the geographic and not geographic layers in various formats
+ * **Download capabilities:** allows the download of the geographic and not geographic layers in various formats
    * **Download as shp/geotiff:** for vector and raster layers
    * **Download as GPK:** for geographic or not geographic layers
    * **Download as xls:** for all types of layers, in .xls format
    * **Download as csv:** for all types of layers, in .csv format
    * **Download as gpx:** for geographic layers, in .gpx format
- * **Not show attributes table:** hide attributes table of the layer for every users
- * **No legend:** it allows to define if the layer must have published the legend at TOC level of the WebGis client
+   * **Download as PDF:** for all types of layers, in .pdf format
+ * **Visibility capabilities:** allows you to define some elements in a generic way, i.e. without distinction between users.
+   * **Hide attributes table:** make the attribute table unsearchable
+   * **Hide legend:** do not show the associated legend
+   * **Hide Layer TOC:** hide the layer in the TOC
 
 **The number above each Action icon shows if and how many related objects are present.**
 
@@ -932,6 +945,7 @@ It will be possible to associate new layers by **loading related QML files** and
 ## Multilinguage
 By default the suite manages four languages: 
  * English
+ * Deutsch
  * French 
  * Italian
  * Finnish
