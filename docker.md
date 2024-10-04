@@ -19,6 +19,9 @@ WEBGIS_PUBLIC_HOSTNAME=demo.g3wsuite.it/
 # containers as /shared-volume
 WEBGIS_DOCKER_SHARED_VOLUME=/tmp/shared-volume-g3w-suite
 
+# Super User account
+G3WSUITE_ADMIN_USERNAME=admin
+G3WSUITE_ADMIN_PASSWORD=<your_password>
 
 # DB setup
 G3WSUITE_POSTGRES_USER_LOCAL=g3wsuite

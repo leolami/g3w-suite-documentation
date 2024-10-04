@@ -49,6 +49,15 @@ If you are going to use docker postgis image, it'll be set to `postgis`
 Database port value connect to.
 If you are going to use docker postgis image, it'll be set to `5432`
 
+``G3WSUITE_ADMIN_USERNAME``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The login used for the superuser account. Only works when setup a new environment.
+
+``G3WSUITE_ADMIN_PASSWORD``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The password used for the superuser account. It will also be used as default password for new accounts.
+
+
 Other not required settings
 ***************************
 
