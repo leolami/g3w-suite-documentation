@@ -121,6 +121,9 @@ by overriding the setting:
 SOCIALACCOUNT_USER_GROUP = '<existing_user_group>'
 ```
 
+Make sure that the user **group** you are trying to assing is compatibile with the user **role** assigned to the user, 
+else the groupd setting will be ignored, leaving the user without an assigned group and the need for a manual intervention.
+
 
 ### Linking social authentication to existing suite users
 
