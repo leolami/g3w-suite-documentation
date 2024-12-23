@@ -93,8 +93,8 @@ of the chosen provider will appear on the suite's login screen.
 ### Automatic user registration via social account login
 
 Authorized users (by the provider) that login for the first time to the suite,
-transparently are registered to the system. For this to work, it is necessary to assign them
-to one of the user roles available in the suite:
+transparently are registered to the system. For this to work, it is necessary to **assign them
+to one of the user roles** available in the suite:
 
 * Editor Level 1
 * Editor Level 2
@@ -112,6 +112,15 @@ The admin roles have to be manually set, if necessary. Any typo in this setting 
 admin role choice will fallback to the default viewer role.
 
 **Note that the username in this case will be retrieved from the provider.**
+
+
+Usually it is also necessary to **assign the user to an existing group**. This can be done
+by overriding the setting:
+
+```python
+SOCIALACCOUNT_USER_GROUP = '<existing_user_group>'
+```
+
 
 ### Linking social authentication to existing suite users
 
