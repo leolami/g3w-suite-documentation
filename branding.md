@@ -182,10 +182,7 @@ This will change the skin color to red (HSL values tested prior in [inkscape](ht
 ![](images/manual/en/branding_13_css_skin.png)
 
 
-
-
-
-<!-- ### G3W_CLIENT_SEARCH_TITLE
+### G3W_CLIENT_SEARCH_TITLE
 
 The search section title in the webgis client can be customized by setting the following line in the ```local_settings.py``` file:
 
@@ -193,7 +190,9 @@ The search section title in the webgis client can be customized by setting the f
 G3W_CLIENT_SEARCH_TITLE = "Search for the Holy Grail"
 ```
 
-#TODO WHAT DOES THIS Change? -->
+This will help user to search for the Holy Grail:
+
+![](images/manual/en/branding_17_search_title.png)
 
 ### G3W_CLIENT_HEADER_CUSTOM_LINKS
 
