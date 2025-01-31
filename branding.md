@@ -1,14 +1,13 @@
 # Branding the G3W-Suite
 
-The G3W-Suite is a web application that can be customized to match the look and feel of your organization. This document explains how to customize the G3W-Suite's branding.
+The G3W-Suite is a web application that can be customized to match the look and feel of your organization. This section covers the branding options available.
 
-It is beyond the scope of this document to explain how to customize the G3W-Suite's branding using the project UI options, since that is already covered in the relative section of the manual. This document will focus on how to customize the G3W-Suite's branding by editing the settings (```local_settings.py``` of the docker project) file in the source code.
+It is beyond the scope of this section to explain how to customize the G3W-Suite's branding using the project UI options, since that is already covered in the relative section of the manual. This section will focus on how to customize the G3W-Suite's branding by editing the settings (```local_settings.py``` of the docker project) file in the source code and possibly some css settings.
 
-## List of settings and their visual description
 
-### G3WSUITE_CUSTOM_STATIC_URL
+## G3WSUITE_CUSTOM_STATIC_URL
 
-Most of the style related settings depend on the ```G3WSUITE_CUSTOM_STATIC_URL``` setting. This setting is a string that represents the URL from which **custom** static files are served. 
+Most of the style related settings depend on the ```G3WSUITE_CUSTOM_STATIC_URL``` attribute. This setting is a string that represents the URL from which **custom** static files are served. 
 
 ```python
 G3WSUITE_CUSTOM_STATIC_URL = '/custom_static/'
@@ -22,17 +21,19 @@ location /custom_static/ {
 }
 ```
 
-Settings depending on this url will just reference the ```G3WSUITE_CUSTOM_STATIC_URL``` setting to complete their paths.
+**NOTE:** When testing this in development/debug mode, the static folder **custom_static** needs to be created in the static folder of the **core** package of the g3w-admin app. 
+
+![](images/manual/en/branding_16_static_folder.png)
 
 
-**NOTE:** When testing these in development/debug mode, the static folder **custom_static** needs to be created in the static folder of the **core** package of teh g3w-admin app. In this case the setting needs to be adjusted to contain the static folder:
+In this case the setting needs to be adjusted to contain the static folder (note the initial static folder):
 
 ```python
 G3WSUITE_CUSTOM_STATIC_URL = '/static/custom_static/'
 ```
 
 
-### G3WSUITE_POWERD_BY
+## G3WSUITE_POWERD_BY
 
 The powered by setting, turned on by default, shows information about the suite and the main developers behind it in the credits section, which is accessible from the top bar of the suite.
 
@@ -40,7 +41,7 @@ Without any interaction the section looks like this:
 
 ![](images/manual/en/branding_01_credits_on.png)
 
-Adding the following line to the ```local_settings.py``` file will turn off the powered by section and show only what has been set in the **Map CLient Data** section of the **General Suite Data**:
+Adding the following line to the ```local_settings.py``` file will turn off the *powered by* section and show only what has been set in the **Map CLient Data** section of the **General Suite Data**:
 
 ```python
 G3WSUITE_POWERD_BY=False
@@ -49,14 +50,14 @@ G3WSUITE_POWERD_BY=False
 ![](images/manual/en/branding_02_credits_off.png)
 
 
-### Logos
+## Logos
 
 When it comes to logos, 4 images can be customized:
 
 - **G3WSUITE_MAIN_LOGO**: The logo that appears in the top left corner of the suite when logged in the admin section. Mind that this one needs to be around 200x60 pixels to fit nicely.
-- **G3WSUITE_RID_LOGO**: The logo that appears in the top left corner of the suite when logged in the admin section, with the sidebar reduced.
-- **G3WSUITE_LOGIN_LOGO**: The logo that appears in the login screen.
-- **G3WSUITE_FAVICON**: The favicon that appears in the browser tab.
+- **G3WSUITE_RID_LOGO**: The logo that appears in the top left corner of the suite when logged in the admin section, with the sidebar reduced. Mind that this one needs to be around 60x60 pixels to fit nicely.
+- **G3WSUITE_LOGIN_LOGO**: The logo that appears on the login screen.
+- **G3WSUITE_FAVICON**: The favicon of the suite.
 
 The settings for these images are strings that represent the path to the image, relative to the **G3WSUITE_CUSTOM_STATIC_URL** setting.
 
@@ -79,9 +80,9 @@ and its reduced form:
 
 ![](images/manual/en/branding_10_logos_reduced.png)
 
-### G3WSUITE_CUSTOM_TITLE
+## G3WSUITE_CUSTOM_TITLE
 
-The title of the html page of teh suite. Usually the title defaults to **g3w-admin** for the admin section and **g3w-client** for the webgis client.
+The title of the html page of the suite. Usually the title defaults to **g3w-admin** for the admin section and **g3w-client** for the webgis client.
 
 ![](images/manual/en/branding_03_html_title_off.png)
 
@@ -97,7 +98,7 @@ we get the following result:
 
 
 
-### G3WSUITE_CUSTOM_CSS
+## G3WSUITE_CUSTOM_CSS
 
 The custom css setting is a string that represents the path to a custom css file that will be loaded in the suite. The path is relative to the **G3WSUITE_CUSTOM_STATIC_URL** setting:
 
@@ -237,7 +238,7 @@ While ths first link opens a new tab with the Gis3W company website, the second 
 
 ### G3W_CLIENT_RIGHT_PANEL
 
-The right panel with can be set with the following setting:
+The right panel width can be set with the following setting:
 
 ```python
 G3W_CLIENT_RIGHT_PANEL = {
