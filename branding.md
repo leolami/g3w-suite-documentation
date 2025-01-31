@@ -248,3 +248,28 @@ G3W_CLIENT_RIGHT_PANEL = {
 The width is the percentage of the map view that will be dedicated to the right panel. 
 
 
+### G3W_CLIENT_LEGEND
+
+It is possible to customize the legend of the webgis client to some extent. The following settings are available:
+
+```python
+G3W_CLIENT_LEGEND = {
+    'fontsize': 16, # legend rules font size
+    'color': 'black', # all text font color
+    'transparent': False, # if false, makes a white background
+    'boxspace': 10,  # insets around legend
+    'layertitlespace': 4, # space between layer title and rules
+    'symbolspace': 4, # spacing between rules
+    'iconlabelspace': 5, # spacing between icon and rule name
+    'symbolwidth': 18, # width of the icon
+    'symbolheight': 4  # height of the icon
+}
+```
+
+This would change the legend from:
+
+![](images/manual/en/branding_19_legend_off.png)
+
+to:
+
+![](images/manual/en/branding_18_legend.png)
