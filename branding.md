@@ -254,15 +254,18 @@ It is possible to customize the legend of the webgis client to some extent. The 
 
 ```python
 G3W_CLIENT_LEGEND = {
-    'fontsize': 16, # legend rules font size
+    "layerfontsize": 20, # layer title font size
+    "itemfontsize": 16, # legend rules font size
     'color': 'black', # all text font color
     'transparent': False, # if false, makes a white background
     'boxspace': 10,  # insets around legend
+    "layerspace": 8, # space between layers
     'layertitlespace': 4, # space between layer title and rules
     'symbolspace': 4, # spacing between rules
     'iconlabelspace': 5, # spacing between icon and rule name
     'symbolwidth': 18, # width of the icon
-    'symbolheight': 4  # height of the icon
+    'symbolheight': 4,  # height of the icon
+    "showfeaturecount": True  # show the number of features in the legend
 }
 ```
 
@@ -272,4 +275,6 @@ This would change the legend from:
 
 to:
 
+
 ![](images/manual/en/branding_18_legend.png)
+
